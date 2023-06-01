@@ -7,7 +7,7 @@ Our objective is to create a projectile simulator to teach soldiers about kinema
 1. Economic Factors 
     - Cost of development.
     - Cost of testing.
-    - Cost of evalutaiton .
+    - Cost of evalutaiton.
 2. Reliability
     - Must be 99% accurate.
     - Must pass all tests.

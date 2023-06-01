@@ -5,7 +5,7 @@ Develop a Howitzer Firing Simulator to teach soldiers about the kinematics and d
 
 ## Simulator Variables
 - Barrel pose (position and orientation): Control the position and orientation of the howitzer barrel.
-- Initial speed: Set the initial velocity of the projectile.
+- Initial speed: Set the initial speed of the projectile.
 - Force applied to the projectile: Control any external forces acting on the projectile.
 - Gravity: Account for the acceleration due to gravity.
 

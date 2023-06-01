@@ -7,7 +7,7 @@ Develop a Howitzer Firing Simulator to teach soldiers about the kinematics and d
 - Barrel pose (position and orientation): Control the position and orientation of the howitzer barrel.
 - Initial speed: Set the initial velocity of the projectile.
 - Force applied to the projectile: Control any external forces acting on the projectile.
-Gravity: Account for the acceleration due to gravity.
+- Gravity: Account for the acceleration due to gravity.
 
 ### Projectile properties:
 

@@ -1,13 +1,13 @@
 In 'Design Requirements' section, you need to specify 'Objectives, Functions and Constraints' each in a separate sub-section. You should consider at least four constraints overarching your design. Following is the list of some constraints (you can also come up your with your own constraints). 
 #Design Requirements
 ## Objectives
-Our objective is to create a projectile simulator to teach soldiers about kinematics and dynamics by simulating a howitzer shooting across a field. We will also create tests to ensure the simulator is accurate.
+Our objective is to create a projectile simulator to teach soldiers about kinematics and dynamics by simulating a howitzer shooting across a field. We will also create tests  ensure the simulator is accurate.
 
 ## Constraints
 1. Economic Factors 
     - Cost of development.
     - Cost of testing.
-    - Cost of evalutaiton.
+    - Cost of evaluation.
 2. Reliability
     - Must be 99% accurate.
     - Must pass all tests.

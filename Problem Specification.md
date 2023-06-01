@@ -18,6 +18,7 @@ The inertial frame expresses the rigid body kinematics and dynamics of any objec
 ```math
 𝑝(𝑡) = 𝑣(𝑡)
 
+
 𝑚𝑣(𝑡) = 𝑓(𝑡) + 𝑓(𝑡) + 𝑚𝑔 
 ```
 - _m_ is the Mass of the projectile.
@@ -28,6 +29,7 @@ The inertial frame expresses the rigid body kinematics and dynamics of any objec
 - f_d is the drag force acting on the projcet
 
 In fluid dynamics, the drag force is, 
+
 ```math
 f_d(t) = -0.5C𝜌Au(t)^2
 ```

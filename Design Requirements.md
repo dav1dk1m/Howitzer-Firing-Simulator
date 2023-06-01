@@ -2,16 +2,16 @@ In 'Design Requirements' section, you need to specify 'Objectives, Functions and
 #Design Requirements
 ## Objectives
 Our objective is to create a projectile simulator to teach soldiers about kinematics and dynamics by simulating a howitzer shooting across a field. We will also create tests to ensure the simulator is accurate.
-## Functions
 
 ## Constraints
 1. Economic Factors 
-    - Must create an easier and more cost efficent way to teach soliders before real life training
-2. Regulatory Compliance (Security and Access)
-3. Reliability
-    - Must be 85% accurate
-4. Sustainability and Environmental Factors
+    - Cost of development.
+    - Cost of testing.
+    - Cost of evalutaiton .
+2. Reliability
+    - Must be 99% accurate.
+    - Must pass all tests.
+3. Sustainability and Environmental Factors
     - Must create an easier and more resource efficent way to teach soliders before real life training
-5. Ethics
+4. Ethics
     - The simulator must teach the soliders so they can be prepared for real life training
-6. Societal Impacts

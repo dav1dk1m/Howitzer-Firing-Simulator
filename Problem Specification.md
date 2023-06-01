@@ -15,10 +15,10 @@ The simulator should model the rigid body kinematics and dynamics of the project
 
 The inertial frame expresses the rigid body kinematics and dynamics of any object.
 
-```math
+```
 p(t) = v(t)
 
-mv(t) = f(t) + f(f) + mg 
+mv(t) = f_d(t) + f(f) + mg 
 ```
 - _m_ is the Mass of the projectile.
 - _p_ is the position of the projectile
@@ -29,7 +29,7 @@ mv(t) = f(t) + f(f) + mg
 
 In fluid dynamics, the drag force is, 
 
-```math
+```
 f_d(t) = -0.5C𝜌Au(t)^2
 ```
 - Drag coefficient (C): Determine the resistance to motion through the fluid.

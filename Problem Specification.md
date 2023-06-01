@@ -18,7 +18,7 @@ The inertial frame expresses the rigid body kinematics and dynamics of any objec
 ```
 p(t) = v(t)
 
-mv(t) = f_d(t) + f(f) + mg 
+mv(t) = f(t) + f_d(t) + mg 
 ```
 - _m_ is the Mass of the projectile.
 - _p_ is the position of the projectile
@@ -37,7 +37,22 @@ f_d(t) = -0.5C𝜌Au(t)^2
 - _A_ is the area of the projectile facing the fluid
 - _u_ is the flow velocity relative to the projectile
 
+## Software 
 
+### Simulator Development:
+The simulator should be developed using the Java programming language.
+
+### Source Code Management:
+GitLab will be used for source code management.
+
+### Testing Techniques:
+Our group is still in the process of learning about testing techniques. Once we have completed our planning and design phase, we will test it using the following techniques:
+- Boundary Value Testing
+- Equivalence Class Testing
+- Decision Table-based Testing
+- Path Testing
+- Data Flow Testing
+- Slice Testing
 
 ## Project Schedule 
 

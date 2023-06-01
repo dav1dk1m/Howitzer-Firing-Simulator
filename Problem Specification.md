@@ -16,10 +16,9 @@ The simulator should model the rigid body kinematics and dynamics of the project
 The inertial frame expresses the rigid body kinematics and dynamics of any object.
 
 ```math
-𝑝(𝑡) = 𝑣(𝑡)
+p(t) = v(t)
 
-
-𝑚𝑣(𝑡) = 𝑓(𝑡) + 𝑓(𝑡) + 𝑚𝑔 
+mv(t) = f(t) + f(f) + mg 
 ```
 - _m_ is the Mass of the projectile.
 - _p_ is the position of the projectile

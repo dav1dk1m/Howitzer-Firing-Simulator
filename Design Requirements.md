@@ -12,9 +12,9 @@ Our objective is to create a projectile simulator to teach soldiers about kinema
     - Must be 99% accurate.
     - Must pass all tests.
 3. Sustainability and Environmental Factors
-    - Must create an easier and more resource efficent way to teach soliders before real life training
+    - Must create an easier and more resource efficent way to teach soldiers before real life training
 4. Ethics
-    - The simulator must teach the soliders so they can be prepared for real life training
+    - The simulator must teach the soldiers so they can be prepared for real life training
 5. Regulatory Compliance (Security and Access)
     - Program can only be accessed by authorized members to avoid malicious intent.
     - Source code can only be accessed by developers who have sufficient authorization.

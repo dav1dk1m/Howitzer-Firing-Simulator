@@ -12,4 +12,5 @@
 - [Design Requirements](https://gitlab.com/sseboys/ense375-project/-/blob/main/Design%20Requirements.md)
 
 ## Project Design 
+- [UML Diagram](https://gitlab.com/sseboys/ense375-project/-/blob/main/ENSE_375_UML_Diagram.png)
 

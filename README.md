@@ -1,5 +1,5 @@
 # Howitzer Firing Simulator
-test2
+
 
 ## Team Members
 - David Kim

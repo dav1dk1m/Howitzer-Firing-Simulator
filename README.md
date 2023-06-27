@@ -12,5 +12,3 @@ testtest
 - [Design Requirements](https://gitlab.com/sseboys/ense375-project/-/blob/main/Design%20Requirements.md)
 
 ## Project Design 
-testing
-daf

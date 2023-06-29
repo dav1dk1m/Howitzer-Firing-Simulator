@@ -1,11 +1,18 @@
 package HowitzerSimulator;
 
-public class dragForce {
+public class DragForce {
 
 	    private double dragCoefficient;
 	    private int fluidDensity;
 	    private int area;
 	    private int flowVelocity;
+	    
+	    public DragForce(double dragCoefficient, int fluidDensity, int area, int flowVelocity) {
+	    	this.dragCoefficient = dragCoefficient;
+	    	this.fluidDensity = fluidDensity;
+	    	this.area = area;
+	    	this.flowVelocity = flowVelocity;
+	    }
 
 	    public double calculateDragForce() {
 	    	// Fluid dynamics, the drag force is f_d(t) = -0.5C𝜌Au(t)^2

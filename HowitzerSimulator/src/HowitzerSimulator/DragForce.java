@@ -17,7 +17,7 @@ public class DragForce {
 	    public double calculateDragForce() {
 	    	// Fluid dynamics, the drag force is f_d(t) = -0.5C𝜌Au(t)^2
 	    	double dragForce = -0.5 * dragCoefficient * fluidDensity * area * Math.pow(flowVelocity, 2);
-	        
+	    	
 	    	return dragForce;
 	    }
 	    

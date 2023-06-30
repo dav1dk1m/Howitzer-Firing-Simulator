@@ -19,7 +19,7 @@ public class HowitzerSimulator {
 	}
 
 	public double calcLandingTime() {
-		double sinVelocity = INITIAL_VELOCITY * Math.sin((angle * Math.PI) / 180);
+		double sinVelocity = INITIAL_VELOCITY * Math.sin(Math.toRadians(angle));
 		return (sinVelocity + Math.sqrt(Math.pow(sinVelocity, 2) + 2 * GravitionalForce.GRAVITY * height))
 				/ GravitionalForce.GRAVITY;
 	}

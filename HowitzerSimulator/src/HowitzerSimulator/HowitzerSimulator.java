@@ -36,7 +36,8 @@ public class HowitzerSimulator {
 	
 	public double calcAcceleration() {
 
-		return (gravForce.calculate())/MASS;
+		//this is only for horizontal acceleration
+		return 0;
 	}
 	
 	
@@ -46,7 +47,8 @@ public class HowitzerSimulator {
 	*/
 	public double calcVelocity() {
 		double Vx = INITIAL_VELOCITY * Math.cos(Math.toRadians(angle));
-		return  Vx;
+		//only the horizontal velocity matter for this at the moment
+		return  (calcAcceleration() * calcLandingTime() ) + Vx;
 	}
 
 	/**	
@@ -54,13 +56,6 @@ public class HowitzerSimulator {
 	* @return double in m
 	*/
 	public double calcPosition() {
-//		double Vx = INITIAL_VELOCITY * Math.cos(Math.toRadians(angle));
-//		double Vy = INITIAL_VELOCITY * Math.sin(Math.toRadians(angle));
-//		
-//		return (Vx * (Vy + Math.sqrt(Math.pow(Vy, 2) + 2 * GravitionalForce.GRAVITY * height)))
-//				/ GravitionalForce.GRAVITY;
-		
-		
 		return (calcVelocity() * calcLandingTime());
 	}
 	

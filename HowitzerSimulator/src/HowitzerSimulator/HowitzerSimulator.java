@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class HowitzerSimulator {
 	private double angle;
 	private int height;
-	private static int MASS = 5;
+	private static double MASS = 5;
 	private static int UNIVERSAL_CONSTANT = 1;
 	private DragForce dragForce;
 	private GravitionalForce gravForce;
@@ -33,12 +33,20 @@ public class HowitzerSimulator {
 				/ GravitionalForce.GRAVITY;
 	}
 
+	
+	public double calcAcceleration() {
+
+		return (gravForce.calculate())/MASS;
+	}
+	
+	
 	/**	
 	* calculates the velocity of the projectile 
 	* @return double in m/s
 	*/
 	public double calcVelocity() {
-		return ((gravForce.calculate()) * calcLandingTime()) / MASS;
+		double Vx = INITIAL_VELOCITY * Math.cos(Math.toRadians(angle));
+		return  Vx;
 	}
 
 	/**	
@@ -46,11 +54,14 @@ public class HowitzerSimulator {
 	* @return double in m
 	*/
 	public double calcPosition() {
-		double Vx = INITIAL_VELOCITY * Math.cos(Math.toRadians(angle));
-		double Vy = INITIAL_VELOCITY * Math.sin(Math.toRadians(angle));
+//		double Vx = INITIAL_VELOCITY * Math.cos(Math.toRadians(angle));
+//		double Vy = INITIAL_VELOCITY * Math.sin(Math.toRadians(angle));
+//		
+//		return (Vx * (Vy + Math.sqrt(Math.pow(Vy, 2) + 2 * GravitionalForce.GRAVITY * height)))
+//				/ GravitionalForce.GRAVITY;
 		
-		return (Vx * (Vy + Math.sqrt(Math.pow(Vy, 2) + 2 * GravitionalForce.GRAVITY * height)))
-				/ GravitionalForce.GRAVITY;
+		
+		return (calcVelocity() * calcLandingTime());
 	}
 	
 	/**	

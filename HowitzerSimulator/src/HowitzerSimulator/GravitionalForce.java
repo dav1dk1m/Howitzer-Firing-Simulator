@@ -5,9 +5,9 @@ package HowitzerSimulator;
  */
 public class GravitionalForce {
 	public static double GRAVITY = 9.8;
-	private int mass;
+	private double mass;
 	
-	public GravitionalForce(int mass) {
+	public GravitionalForce(double mass) {
 		this.mass = mass;
 	}
 	/**

@@ -1,6 +1,10 @@
 package HowitzerSimulator;
 import java.util.Scanner;
 
+	/**
+	 * Howitzer Class
+	 */
+
 public class HowitzerSimulator {
 	private double angle;
 	private int height;
@@ -9,7 +13,6 @@ public class HowitzerSimulator {
 	private DragForce dragForce;
 	private GravitionalForce gravForce;
 	public static int INITIAL_VELOCITY = 10;
-
 
 	public HowitzerSimulator(double angle, int height) {
 		this.angle = angle;
@@ -20,19 +23,28 @@ public class HowitzerSimulator {
 //		this.externalForce = new ExternalForce()
 	}
 	
-
+	/**	
+	* calculates the time the projectile is in the air
+	* @return double time in seconds
+	*/
 	public double calcLandingTime() {
 		double sinVelocity = INITIAL_VELOCITY * Math.sin(Math.toRadians(angle));
 		return (sinVelocity + Math.sqrt(Math.pow(sinVelocity, 2) + 2 * GravitionalForce.GRAVITY * height))
 				/ GravitionalForce.GRAVITY;
 	}
 
-
+	/**	
+	* calculates the velocity of the projectile 
+	* @return double in m/s
+	*/
 	public double calcVelocity() {
 		return ((gravForce.calculate()) * calcLandingTime()) / MASS;
 	}
 
-
+	/**	
+	* calculates the position of the projectile 
+	* @return double in m
+	*/
 	public double calcPosition() {
 		double Vx = INITIAL_VELOCITY * Math.cos(Math.toRadians(angle));
 		double Vy = INITIAL_VELOCITY * Math.sin(Math.toRadians(angle));
@@ -41,7 +53,10 @@ public class HowitzerSimulator {
 				/ GravitionalForce.GRAVITY;
 	}
 	
-
+	/**	
+	* calculates the max height of the projectile 
+	* @return double in m
+	*/
 	public double calcMaxHeight() {
 		double Vx = INITIAL_VELOCITY * Math.cos(Math.toRadians(angle));
 		double Vy = INITIAL_VELOCITY * Math.sin(Math.toRadians(angle));
@@ -49,27 +64,49 @@ public class HowitzerSimulator {
 		return height + ((Math.pow(INITIAL_VELOCITY, 2) * Math.pow( Math.sin(Math.toRadians(angle)), 2))/(2 * GravitionalForce.GRAVITY));
 	}
 
-
+	/**	
+	* Gets the drag force on the projectile 
+	* @return DragForce in N
+	*/
 	public DragForce getDragForce() {
 		return dragForce;
 	}
-
+	/**	
+	* Sets the drag force on the projectile 
+	* @param DragForce in N
+	*/
 	public void setDragForce(DragForce dragForce) {
 		this.dragForce = dragForce;
 	}
 
+	/**	
+	* Gets the angle of the projectile 
+	* @return angle in degrees
+	*/
 	public double getAngle() {
 		return angle;
 	}
-
+	
+	/**	
+	* Sets the angle of the projectile 
+	* @param angle in degrees
+	*/
 	public void setAngle(double angle) {
 		this.angle = angle;
 	}
 
+	/**	
+	* Gets the starting height of the projectile 
+	* @return height in m
+	*/
 	public double getHeight() {
 		return height;
 	}
-
+	
+	/**	
+	* Sets the starting height of the projectile 
+	* @param height in m
+	*/
 	public void setHeight(int height) {
 		this.height = height;
 	}

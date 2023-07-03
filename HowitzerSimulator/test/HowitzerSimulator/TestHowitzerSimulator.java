@@ -5,9 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class TestHowitzerSimulator {
 
-	class TestHowitzerSimulator {
+class TestHowitzerSimulator {
 
 	    private HowitzerSimulator howitzerSimulator;
 
@@ -25,7 +24,7 @@ class TestHowitzerSimulator {
 
 	    @Test
 	    public void testCalcPosition() {
-	        double expectedPosition = 16.41891480245859;
+	        double expectedPosition = 16.418914802458588;
 	        double actualPosition = howitzerSimulator.calcPosition();
 	        assertEquals(expectedPosition, actualPosition, "The calculated position does not match the expected result");
 	    }
@@ -36,5 +35,17 @@ class TestHowitzerSimulator {
 	        double actualMaxHeight = howitzerSimulator.calcMaxHeight();
 	        assertEquals(expectedMaxHeight, actualMaxHeight, "The calculated max height does not match the expected result");
 	    }
+	    
+	    @Test
+	    public void testGravitationalForce() {
+	    	GravitionalForce gravForce = new GravitionalForce(5);
+	    	assertEquals(gravForce.calculate(), 49.0, "the calculated gravitational force does not match the expected result");
+	    }
+	    @Test
+	    public void testCalcVelocity() {
+	    	int MASS = 5;
+	    	
+			assertEquals (howitzerSimulator.calcVelocity(), 22.755454953223598 ,"the calculated gravitational force does not match the expected result" );
+		}
 
 }

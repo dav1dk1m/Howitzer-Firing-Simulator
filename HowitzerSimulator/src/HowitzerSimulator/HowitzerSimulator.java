@@ -162,10 +162,10 @@ public class HowitzerSimulator {
 		System.out.println("Input starting angle (0-90 degrees): ");
 		inputAngle = in.nextDouble();
 		
-		System.out.println("Input mass (<0kg): ");
+		System.out.println("Input mass (>0kg): ");
 		mass = in.nextDouble();
 		
-		System.out.println("Input Velocity (<0m/s): ");
+		System.out.println("Input Velocity (>0m/s): ");
 		velocity = in.nextDouble();
 		
 		HowitzerSimulator howSim = new HowitzerSimulator(inputAngle, height,mass, velocity );

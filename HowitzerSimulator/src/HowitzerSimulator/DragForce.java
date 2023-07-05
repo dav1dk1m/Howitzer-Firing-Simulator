@@ -7,11 +7,11 @@ package HowitzerSimulator;
 public class DragForce {
 
 	    private double dragCoefficient;
-	    private int fluidDensity;
+	    private double fluidDensity;
 	    private int area;
 	    private int flowVelocity;
 	    
-	    public DragForce(double dragCoefficient, int fluidDensity, int area, int flowVelocity) {
+	    public DragForce(double dragCoefficient, double  fluidDensity, int area, int flowVelocity) {
 	    	this.dragCoefficient = dragCoefficient;
 	    	this.fluidDensity = fluidDensity;
 	    	this.area = area;
@@ -27,6 +27,10 @@ public class DragForce {
 	    	double dragForce = -0.5 * dragCoefficient * fluidDensity * area * Math.pow(flowVelocity, 2);
 	    	
 	    	return dragForce;
+	    }
+	    
+	    public double calculateDragAcceleration(double mass) {
+	    	return calculateDragForce() / mass;
 	    }
 	    
 	    public double calculateConstants() {

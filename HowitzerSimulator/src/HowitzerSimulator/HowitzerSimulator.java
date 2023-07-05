@@ -32,9 +32,6 @@ public class HowitzerSimulator {
 	public double calcLandingTime() {
 		double Vy = velocity * Math.sin(Math.toRadians(angle));
 		double Vt = calcTerminalVelocity();
-		System.out.println(Vy);
-		System.out.println(Vt);
-		System.out.println(Vy > Vt);
 
 		if(Vy > Vt) {
 			return (2 * Vy)/GravitionalForce.GRAVITY;
@@ -83,13 +80,13 @@ public class HowitzerSimulator {
 	* @return double in m
 	*/
 	public double calcPosition() {
-		double Vy = velocity * Math.sin(angle);
+		double Vy = velocity * Math.sin(Math.toRadians(angle));
 		double Vt = calcTerminalVelocity();
 		
 		if(Vy < Vt) {
-			return (Math.pow(velocity, 2) * Math.sin(45))/GravitionalForce.GRAVITY;
+			return (Math.pow(velocity, 2) * Math.sin(2 * Math.toRadians(angle)))/GravitionalForce.GRAVITY;
 		} else {
-			return (velocity * Vt * Math.cos(angle))/GravitionalForce.GRAVITY;
+			return (velocity * Vt * Math.cos(Math.toRadians(angle)))/GravitionalForce.GRAVITY;
 		}
 //		return (calcHorizontalVelocity() * calcLandingTime());
 	}

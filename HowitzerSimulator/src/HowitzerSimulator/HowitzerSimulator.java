@@ -33,12 +33,14 @@ public class HowitzerSimulator {
 	public double calcLandingTime() {
 		double Vy = velocity * Math.sin(Math.toRadians(angle));
 		double Vt = calcTerminalVelocity();
-
+		double landingTime;
 		if (Vy > Vt) {
-			return (2 * Vy) / GravitionalForce.GRAVITY;
+			landingTime = (2 * Vy) / GravitionalForce.GRAVITY;
 		} else {
-			return Vy / GravitionalForce.GRAVITY;
+			landingTime = Vy / GravitionalForce.GRAVITY;
 		}
+		
+		return (double) Math.round(landingTime * 100.00) /100.00;
 	}
 
 	public double calcTerminalVelocity() {
@@ -85,13 +87,15 @@ public class HowitzerSimulator {
 	public double calcPosition() {
 		double Vy = velocity * Math.sin(Math.toRadians(angle));
 		double Vt = calcTerminalVelocity();
+		double position;
 
 		if (Vy < Vt) {
-			return (Math.pow(velocity, 2) * Math.sin(2 * Math.toRadians(angle))) / GravitionalForce.GRAVITY;
+			position = (Math.pow(velocity, 2) * Math.sin(2 * Math.toRadians(angle))) / GravitionalForce.GRAVITY;
 		} else {
-			return (velocity * Vt * Math.cos(Math.toRadians(angle))) / GravitionalForce.GRAVITY;
+			position =  (velocity * Vt * Math.cos(Math.toRadians(angle))) / GravitionalForce.GRAVITY;
 		}
-//		return (calcHorizontalVelocity() * calcLandingTime());
+		
+		return (double) Math.round(position * 100.00) / 100.00;
 	}
 
 	/**
@@ -100,9 +104,10 @@ public class HowitzerSimulator {
 	 * @return double in m
 	 */
 	public double calcMaxHeight() {
-		return height + ((Math.pow(velocity, 2) * Math.pow(Math.sin(Math.toRadians(angle)), 2))
+		double maxHeight = height + ((Math.pow(velocity, 2) * Math.pow(Math.sin(Math.toRadians(angle)), 2))
 				/ (2 * (GravitionalForce.GRAVITY)
 						- dragForce.calculateDragAcceleration(mass) * Math.sin(Math.toRadians(angle))));
+		return (double) Math.round(maxHeight * 100.00) / 100.00;
 	}
 
 	/**

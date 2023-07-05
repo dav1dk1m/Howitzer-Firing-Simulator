@@ -29,6 +29,10 @@ public class DragForce {
 	    	return dragForce;
 	    }
 	    
+	    public double calculateConstants() {
+	    	return dragCoefficient * fluidDensity * area;
+	    }
+	    
 	    /**
 	     * Gets the drag coefficient
 	     * @return double dragCoefficient

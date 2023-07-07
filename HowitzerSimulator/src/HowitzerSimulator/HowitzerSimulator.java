@@ -7,7 +7,8 @@ import java.util.Scanner;
  */
 
 public class HowitzerSimulator {
-	private double angle;
+	private double verticalAngle;
+	private double rotationAngle;
 	private double height;
 	private double mass;
 	private static int UNIVERSAL_CONSTANT = 1;
@@ -15,8 +16,9 @@ public class HowitzerSimulator {
 	private GravitionalForce gravForce;
 	public double velocity;
 
-	public HowitzerSimulator(double angle, double height, double mass, double velocity) {
-		this.angle = angle;
+	public HowitzerSimulator(double verticalAngle, double rotationAngle,  double height, double mass, double velocity) {
+		this.verticalAngle = verticalAngle;
+		this.rotationAngle = rotationAngle;
 		this.height = height;
 		this.mass = mass;
 		this.velocity = velocity;
@@ -31,7 +33,7 @@ public class HowitzerSimulator {
 	 * @return double time in seconds
 	 */
 	public double calcLandingTime() {
-		double Vy = velocity * Math.sin(Math.toRadians(angle));
+		double Vy = velocity * Math.sin(Math.toRadians(verticalAngle));
 		double Vt = calcTerminalVelocity();
 		double landingTime;
 		if (Vy > Vt) {
@@ -49,12 +51,12 @@ public class HowitzerSimulator {
 
 	public double calcHorizontalAcceleration() {
 		// this is only for horizontal acceleration
-		return (dragForce.calculateDragForce() / mass) * Math.cos(Math.toRadians(angle));
+		return (dragForce.calculateDragForce() / mass) * Math.cos(Math.toRadians(verticalAngle));
 	}
 
 	public double calcVerticalAcceleration() {
 		// this is only for vertical acceleration
-		return ((dragForce.calculateDragForce() / mass) * Math.sin(Math.toRadians(angle))) + gravForce.calculate();
+		return ((dragForce.calculateDragForce() / mass) * Math.sin(Math.toRadians(verticalAngle))) + gravForce.calculate();
 	}
 
 	/**
@@ -63,7 +65,7 @@ public class HowitzerSimulator {
 	 * @return double in m/s
 	 */
 	public double calcHorizontalVelocity() {
-		double Vx = velocity * Math.cos(Math.toRadians(angle));
+		double Vx = velocity * Math.cos(Math.toRadians(verticalAngle));
 		// only the horizontal velocity matter for this at the moment
 		return (calcHorizontalAcceleration() * calcLandingTime()) + Vx;
 	}
@@ -74,28 +76,45 @@ public class HowitzerSimulator {
 	 * @return double in m/s
 	 */
 	public double calcVerticalVelocity() {
-		double Vy = velocity * Math.cos(Math.toRadians(angle));
+		double Vy = velocity * Math.cos(Math.toRadians(verticalAngle));
 		// only the horizontal velocity matter for this at the moment
 		return (calcVerticalAcceleration() * calcLandingTime()) + Vy;
 	}
 
 	/**
-	 * calculates the position of the projectile
+	 * calculates the range of the projectile
 	 * 
 	 * @return double in m
 	 */
-	public double calcPosition() {
-		double Vy = velocity * Math.sin(Math.toRadians(angle));
+	public double calcRange() {
+		double Vy = velocity * Math.sin(Math.toRadians(verticalAngle));
 		double Vt = calcTerminalVelocity();
-		double position;
+		double range;
 
 		if (Vy < Vt) {
-			position = (Math.pow(velocity, 2) * Math.sin(2 * Math.toRadians(angle))) / GravitionalForce.GRAVITY;
+			range = (Math.pow(velocity, 2) * Math.sin(2 * Math.toRadians(verticalAngle))) / GravitionalForce.GRAVITY;
 		} else {
-			position =  (velocity * Vt * Math.cos(Math.toRadians(angle))) / GravitionalForce.GRAVITY;
+			range =  (velocity * Vt * Math.cos(Math.toRadians(verticalAngle))) / GravitionalForce.GRAVITY;
 		}
 		
-		return (double) Math.round(position * 100.00) / 100.00;
+		return (double) Math.round(range * 100.00) / 100.00;
+	}
+	
+	
+	public double[] calcPosition() {
+		double positionArray[] = new double [2];
+		double range = calcRange();
+		
+		if(rotationAngle == 0 )
+		{
+			positionArray[0] = range;
+			positionArray[1] = 0;
+			return positionArray;
+		}
+		positionArray[0] = Math.round(range * Math.cos(Math.toRadians(rotationAngle)) * 100.00) / 100.00;
+		positionArray[1] = Math.round(range * Math.sin(Math.toRadians(rotationAngle))* 100.00)/100.00;
+		return positionArray;
+		
 	}
 
 	/**
@@ -104,9 +123,9 @@ public class HowitzerSimulator {
 	 * @return double in m
 	 */
 	public double calcMaxHeight() {
-		double maxHeight = height + ((Math.pow(velocity, 2) * Math.pow(Math.sin(Math.toRadians(angle)), 2))
+		double maxHeight = height + ((Math.pow(velocity, 2) * Math.pow(Math.sin(Math.toRadians(verticalAngle)), 2))
 				/ (2 * (GravitionalForce.GRAVITY)
-						- dragForce.calculateDragAcceleration(mass) * Math.sin(Math.toRadians(angle))));
+						- dragForce.calculateDragAcceleration(mass) * Math.sin(Math.toRadians(verticalAngle))));
 		return (double) Math.round(maxHeight * 100.00) / 100.00;
 	}
 
@@ -134,7 +153,7 @@ public class HowitzerSimulator {
 	 * @return angle in degrees
 	 */
 	public double getAngle() {
-		return angle;
+		return verticalAngle;
 	}
 
 	/**
@@ -143,7 +162,7 @@ public class HowitzerSimulator {
 	 * @param angle in degrees
 	 */
 	public void setAngle(double angle) {
-		this.angle = angle;
+		this.verticalAngle = angle;
 	}
 
 	/**
@@ -165,7 +184,8 @@ public class HowitzerSimulator {
 	}
 
 	public static void main(String[] args) {
-		double inputAngle;
+		double launchAngle;
+		double rotationAngle;
 		double height;
 		double mass;
 		double velocity;
@@ -174,8 +194,11 @@ public class HowitzerSimulator {
 		System.out.println("Input starting height (m): ");
 		height = in.nextDouble();
 
-		System.out.println("Input starting angle (0-90 degrees): ");
-		inputAngle = in.nextDouble();
+		System.out.println("Input launch angle (0-90 degrees): ");
+		launchAngle = in.nextDouble();
+		
+		System.out.println("Input rotation angle (0-360 degrees): ");
+		rotationAngle = in.nextDouble();
 
 		System.out.println("Input mass (>0kg): ");
 		mass = in.nextDouble();
@@ -183,9 +206,11 @@ public class HowitzerSimulator {
 		System.out.println("Input Velocity (>0m/s): ");
 		velocity = in.nextDouble();
 
-		HowitzerSimulator howSim = new HowitzerSimulator(inputAngle, height, mass, velocity);
-		double position = howSim.calcPosition();
-		System.out.println("Position is " + position + "m");
+		HowitzerSimulator howSim = new HowitzerSimulator(launchAngle, rotationAngle,  height, mass, velocity);
+		double range = howSim.calcRange();
+		System.out.println("Range is " + range + "m");
+		double[] position = howSim.calcPosition();
+		System.out.println("Position is [" + position[0] + "," + position[1]+ "] m");
 		double airTime = howSim.calcLandingTime();
 		System.out.println("Air Time is " + airTime + "s");
 		double maxHeight = howSim.calcMaxHeight();

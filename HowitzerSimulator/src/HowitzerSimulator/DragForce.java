@@ -9,28 +9,30 @@ public class DragForce {
 	    private double dragCoefficient;
 	    private double fluidDensity;
 	    private int area;
-	    private int flowVelocity;
+	    private double flowVelocity;
+	    private double flowAcceleration;
 	    
-	    public DragForce(double dragCoefficient, double  fluidDensity, int area, int flowVelocity) {
+	    public DragForce(double dragCoefficient, double  fluidDensity, int area, double flowVelocity, double flowAcceleration) {
 	    	this.dragCoefficient = dragCoefficient;
 	    	this.fluidDensity = fluidDensity;
 	    	this.area = area;
 	    	this.flowVelocity = flowVelocity;
+	    	this.flowAcceleration = flowAcceleration;
 	    }
 
 		/**	
 		* Calculates the drag force on the projectile 
 		* @return drag force in N
 		*/
-	    public double calculateDragForce() {
+	    public double calculateDragForce(double t) {
 	    	// Fluid dynamics, the drag force is f_d(t) = -0.5C𝜌Au(t)^2
-	    	double dragForce = -0.5 * dragCoefficient * fluidDensity * area * Math.pow(flowVelocity, 2);
+	    	double dragForce = -0.5 * dragCoefficient * fluidDensity * area * Math.pow(flowVelocity - (flowAcceleration * t), 2);
 	    	
 	    	return dragForce;
 	    }
 	    
-	    public double calculateDragAcceleration(double mass) {
-	    	return calculateDragForce() / mass;
+	    public double calculateDragAcceleration(double mass, double t) {
+	    	return calculateDragForce(t) / mass;
 	    }
 	    
 	    public double calculateConstants() {
@@ -88,7 +90,7 @@ public class DragForce {
 	     * Gets the flow Velocity
 	     * @return double flowVelocity
 	     */
-	    public int getFlowVelocity() {
+	    public double getFlowVelocity() {
 	        return flowVelocity;
 	    }
 	    
@@ -96,7 +98,7 @@ public class DragForce {
 	     * Sets the flow Velocity
 	     * @param double flowVelocity
 	     */
-	    public void setFlowVelocity(int flowVelocity) {
+	    public void setFlowVelocity(double flowVelocity) {
 	        this.flowVelocity = flowVelocity;
 	    }
 

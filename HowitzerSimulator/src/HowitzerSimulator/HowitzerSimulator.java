@@ -114,13 +114,23 @@ public class HowitzerSimulator {
 		double position = height;
 		double time = 0.0;
 		double airTime = 0;
+		int iteration = 0;
 		while (position >= 0) {
 			double velocity = calcVerticalVelocity(time);
 			position = height + velocity * time; 
-			System.out.println("height at " + time + " seconds is " + position + "m");
+			
 			if(position >= 0)
 				airTime = time;
+			
+			if(iteration % 50 == 0) {
+				System.out.println("Time (" + round(time) + ")");
+				System.out.println("==================================================");
+				System.out.println("Height: " + position);
+				System.out.println();
+			}
+			
 			time += 0.001;
+			iteration +=1;
 		}
 		
 		System.out.println("AirTime is " + round(airTime));

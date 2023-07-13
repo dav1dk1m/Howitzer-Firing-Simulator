@@ -15,6 +15,10 @@ public class HowitzerSimulator {
 	private DragForce dragForce;
 	private GravitionalForce gravForce;
 	private ExternalForce externalForce;
+	public double airTime;
+	public double maxHeight;
+	public double positionArr[];
+	public double range;
 	public double velocity;
 
 	public HowitzerSimulator(double verticalAngle, double rotationAngle, double height, double mass, double velocity) {
@@ -26,7 +30,6 @@ public class HowitzerSimulator {
 		this.dragForce = new DragForce((double) 0.5, 1.3, UNIVERSAL_CONSTANT, UNIVERSAL_CONSTANT, 0.2);
 		this.gravForce = new GravitionalForce(mass);
 		this.externalForce = new ExternalForce(1);
-//		this.externalForce = new ExternalForce()
 	}
 
 	/**
@@ -115,9 +118,9 @@ public class HowitzerSimulator {
 	public void calcTrajectory() {
 		double position = height;
 		double time = 0.0;
-		double airTime = 0;
+		airTime = 0;
 		int iteration = 0;
-		double maxHeight = 0.0;  
+		maxHeight = 0.0;  
 		
 		while (position >= 0) {
 			double velocity = calcVerticalVelocity(time);
@@ -144,8 +147,8 @@ public class HowitzerSimulator {
 		System.out.println("AirTime is " + round(airTime) + "s");
 		System.out.println("Max Height is " + round(maxHeight) + "m");
 		System.out.println("Range is " + round(calcRange(airTime)) + "m");
-		double[] positionArray = calcPosition(airTime);
-		System.out.println("Position is [" + round(positionArray[0]) + "," + round(positionArray[1]) + "," + round(positionArray[2]) + "]m");
+		positionArr = calcPosition(airTime);
+		System.out.println("Position is [" + round(positionArr[0]) + "," + round(positionArr[1]) + "," + round(positionArr[2]) + "]m");
 	}
 	
 	public double round(double x){

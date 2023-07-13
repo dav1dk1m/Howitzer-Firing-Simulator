@@ -115,26 +115,32 @@ public class HowitzerSimulator {
 		double time = 0.0;
 		double airTime = 0;
 		int iteration = 0;
+		double maxHeight = 0.0;  
+		
 		while (position >= 0) {
 			double velocity = calcVerticalVelocity(time);
-			position = height + velocity * time; 
-			
+			position = height + velocity * time;
+
+			if(position > maxHeight) {
+				maxHeight = position;  
+			}
+
 			if(position >= 0)
 				airTime = time;
-			
+
 			if(iteration % 50 == 0) {
 				System.out.println("Time (" + round(time) + ")");
 				System.out.println("==================================================");
 				System.out.println("Height: " + position);
 				System.out.println();
 			}
-			
+
 			time += 0.001;
 			iteration +=1;
 		}
-		
+
 		System.out.println("AirTime is " + round(airTime));
-		System.out.println("max height is " +  round(calcMaxHeight(airTime/2)));
+		System.out.println("max height is " + round(maxHeight));
 		System.out.println("Range is " + round(calcRange(airTime)));
 		double[] positionArray = calcPosition(airTime);
 		System.out.println("Position is [" + positionArray[0] + "," + positionArray[1] + "," + positionArray[2] + "]m");
@@ -142,17 +148,6 @@ public class HowitzerSimulator {
 	
 	public double round(double x){
 		return Math.round(x * 100.00) / 100.00;
-	}
-
-	/**
-	 * calculates the max height of the projectile
-	 * 
-	 * @return double in m
-	 */
-	public double calcMaxHeight(double time) {
-		double acceleration = calcVerticalAcceleration(time); //-9.8
-		double velocity = calcVerticalVelocity(time);
-		return height + velocity * time; 
 	}
 
 	/**

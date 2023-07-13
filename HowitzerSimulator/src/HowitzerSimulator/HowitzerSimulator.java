@@ -14,6 +14,7 @@ public class HowitzerSimulator {
 	private static int UNIVERSAL_CONSTANT = 1;
 	private DragForce dragForce;
 	private GravitionalForce gravForce;
+	private ExternalForce externalForce;
 	public double velocity;
 
 	public HowitzerSimulator(double verticalAngle, double rotationAngle, double height, double mass, double velocity) {
@@ -24,6 +25,7 @@ public class HowitzerSimulator {
 		this.velocity = velocity;
 		this.dragForce = new DragForce((double) 0.5, 1.3, UNIVERSAL_CONSTANT, UNIVERSAL_CONSTANT, 0.2);
 		this.gravForce = new GravitionalForce(mass);
+		this.externalForce = new ExternalForce(1);
 //		this.externalForce = new ExternalForce()
 	}
 
@@ -51,12 +53,12 @@ public class HowitzerSimulator {
 
 	public double calcHorizontalAcceleration(double t) {
 		// this is only for horizontal acceleration
-		return (dragForce.calculateDragForce(t) * Math.cos(Math.toRadians(verticalAngle)) / mass);
+		return (dragForce.calculateDragForce(t) * Math.cos(Math.toRadians(verticalAngle)) + externalForce.getExternalForce(25, t) * Math.cos(Math.toRadians(verticalAngle)) / mass);
 	}
 
 	public double calcVerticalAcceleration(double t) {
 		// this is only for vertical acceleration
-		return ((dragForce.calculateDragForce(t) * Math.sin(Math.toRadians(verticalAngle))) - gravForce.calculate())
+		return ((dragForce.calculateDragForce(t) * Math.sin(Math.toRadians(verticalAngle))) + externalForce.getExternalForce(25, t) * Math.sin(Math.toRadians(verticalAngle)) - gravForce.calculate())
 				/ mass;
 	}
 
@@ -139,11 +141,11 @@ public class HowitzerSimulator {
 			iteration +=1;
 		}
 
-		System.out.println("AirTime is " + round(airTime));
-		System.out.println("max height is " + round(maxHeight));
-		System.out.println("Range is " + round(calcRange(airTime)));
+		System.out.println("AirTime is " + round(airTime) + "s");
+		System.out.println("Max Height is " + round(maxHeight) + "m");
+		System.out.println("Range is " + round(calcRange(airTime)) + "m");
 		double[] positionArray = calcPosition(airTime);
-		System.out.println("Position is [" + positionArray[0] + "," + positionArray[1] + "," + positionArray[2] + "]m");
+		System.out.println("Position is [" + round(positionArray[0]) + "," + round(positionArray[1]) + "," + round(positionArray[2]) + "]m");
 	}
 	
 	public double round(double x){
@@ -213,48 +215,48 @@ public class HowitzerSimulator {
 
 		Scanner in = new Scanner(System.in);
 
-//		System.out.println("Input starting height (m): ");
-//		height = in.nextDouble();
-//
-//		while (height < 0) {
-//			System.out.println("Height should be >= 0. Try again.");
-//			height = in.nextDouble();
-//		}
-//
-//		System.out.println("Input launch angle (0-90 degrees): ");
-//		launchAngle = in.nextDouble();
-//
-//		while (launchAngle < 0 || launchAngle > 90) {
-//			System.out.println("Launch angle should be between 0 and 90 degrees. Try again:");
-//			launchAngle = in.nextDouble();
-//		}
-//
-//		System.out.println("Input rotation angle (0-360 degrees): ");
-//		rotationAngle = in.nextDouble();
-//
-//		while (rotationAngle < 0 || rotationAngle > 360) {
-//			System.out.println("Rotation angle should be between 0 and 360 degrees. Try again:");
-//			rotationAngle = in.nextDouble();
-//		}
-//
-//		System.out.println("Input mass (>0kg): ");
-//		mass = in.nextDouble();
-//
-//		while (mass <= 0) {
-//			System.out.println("Mass should be > 0kg. Try again:");
-//			mass = in.nextDouble();
-//		}
-//
-//		System.out.println("Input Velocity (>0m/s): ");
-//		velocity = in.nextDouble();
-//
-//		while (velocity <= 0) {
-//			System.out.println("Velocity should be > 0m/s. Try again:");
-//			velocity = in.nextDouble();
-//		}
+		System.out.println("Input starting height (m): ");
+		height = in.nextDouble();
 
-//		HowitzerSimulator howSim = new HowitzerSimulator(launchAngle, rotationAngle, height, mass, velocity);
-		HowitzerSimulator howSim = new HowitzerSimulator(45, 0, 3, 10, 10);
+		while (height < 0) {
+			System.out.println("Height should be >= 0. Try again.");
+			height = in.nextDouble();
+		}
+
+		System.out.println("Input launch angle (0-90 degrees): ");
+		launchAngle = in.nextDouble();
+
+		while (launchAngle < 0 || launchAngle > 90) {
+			System.out.println("Launch angle should be between 0 and 90 degrees. Try again:");
+			launchAngle = in.nextDouble();
+		}
+
+		System.out.println("Input rotation angle (0-360 degrees): ");
+		rotationAngle = in.nextDouble();
+
+		while (rotationAngle < 0 || rotationAngle > 360) {
+			System.out.println("Rotation angle should be between 0 and 360 degrees. Try again:");
+			rotationAngle = in.nextDouble();
+		}
+
+		System.out.println("Input mass (>0kg): ");
+		mass = in.nextDouble();
+
+		while (mass <= 0) {
+			System.out.println("Mass should be > 0kg. Try again:");
+			mass = in.nextDouble();
+		}
+
+		System.out.println("Input Velocity (>0m/s): ");
+		velocity = in.nextDouble();
+
+		while (velocity <= 0) {
+			System.out.println("Velocity should be > 0m/s. Try again:");
+			velocity = in.nextDouble();
+		}
+
+		HowitzerSimulator howSim = new HowitzerSimulator(launchAngle, rotationAngle, height, mass, velocity);
+		//HowitzerSimulator howSim = new HowitzerSimulator(45, 0, 3, 10, 10);
 		howSim.calcTrajectory();
 
 	}

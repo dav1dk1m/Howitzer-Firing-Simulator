@@ -32,28 +32,6 @@ public class HowitzerSimulator {
 		this.externalForce = new ExternalForce(1);
 	}
 
-	/**
-	 * calculates the time the projectile is in the air
-	 * 
-	 * @return double time in seconds
-	 */
-	public double calcLandingTime() {
-		double Vy = velocity * Math.sin(Math.toRadians(verticalAngle));
-		double Vt = calcTerminalVelocity();
-		double landingTime;
-		if (Vy > Vt) {
-			landingTime = (2 * Vy) / GravitionalForce.GRAVITY;
-		} else {
-			landingTime = Vy / GravitionalForce.GRAVITY;
-		}
-
-		return (double) Math.round(landingTime * 100.00) / 100.00;
-	}
-
-	public double calcTerminalVelocity() {
-		return Math.sqrt((2 * gravForce.calculate()) / dragForce.calculateConstants());
-	}
-
 	public double calcHorizontalAcceleration(double t) {
 		// this is only for horizontal acceleration
 		return (dragForce.calculateDragForce(t) * Math.cos(Math.toRadians(verticalAngle)) + externalForce.getExternalForce(25, t) * Math.cos(Math.toRadians(verticalAngle)) / mass);

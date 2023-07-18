@@ -36,7 +36,7 @@ public class HowitzerSimulator {
 	public double calcHorizontalAcceleration(double t) {
 		// this is only for horizontal acceleration
 		return (dragForce.calculateDragForce(t) * Math.cos(Math.toRadians(verticalAngle))
-				+ externalForce.getExternalForce(t) * Math.cos(Math.toRadians(verticalAngle)) / mass);
+				+ externalForce.getExternalForce(t) * Math.cos(Math.toRadians(verticalAngle)))/ mass;
 	}
 
 	public double calcVerticalAcceleration(double t) {

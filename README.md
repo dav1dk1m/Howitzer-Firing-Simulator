@@ -14,7 +14,7 @@
 ## Project Design 
 - [UML Diagram](https://gitlab.com/sseboys/ense375-project/-/blob/main/ENSE_375_UML_Diagram.png)
 
-### MVP
+## MVP (Minimum Viable Product)
 Our software project's development will be divided into three Minimum Viable Product (MVP) stages. Each stage represents an increased level of functionality and user interaction.
 
 **[MVP 1](https://gitlab.com/sseboys/ense375-project/-/tree/mvpOne)**: In the initial stage, our software will obtain user inputs for height and  angle. This is the most basic interaction level, letting users input these two key parameters.

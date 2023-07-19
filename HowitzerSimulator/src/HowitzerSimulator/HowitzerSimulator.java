@@ -131,7 +131,7 @@ public class HowitzerSimulator {
 			if(iteration % 50 == 0) {
 				System.out.println("Time (" + round(time) + ")");
 				System.out.println("==================================================");
-				System.out.println("Height: " + position);
+				System.out.println("Height: " + round(position));
 				System.out.println();
 			}
 
@@ -143,7 +143,7 @@ public class HowitzerSimulator {
 		System.out.println("max height is " + round(maxHeight));
 		System.out.println("Range is " + round(calcRange(airTime)));
 		double[] positionArray = calcPosition(airTime);
-		System.out.println("Position is [" + positionArray[0] + "," + positionArray[1] + "," + positionArray[2] + "]m");
+		System.out.println("Position is [" + round(positionArray[0]) + "," + round(positionArray[1]) + "," + positionArray[2] + "]m");
 	}
 	
 	public double round(double x){

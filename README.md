@@ -6,20 +6,20 @@ MVP 1 focuses on taking user inputs for height and angle and generates outputs o
 ## Class Methods
 Several public methods are defined to perform various calculations:
 
-- **calcLandingTime()**: Calculates and returns the total time the projectile is in the air.
-- **calcVelocity()**: Calculates and returns the velocity of the projectile.
-- **calcPosition()**: Calculates and returns the position of the projectile.
-- **calcMaxHeight()**: Calculates and returns the maximum height reached by the projectile.
+- `calcLandingTime()`: Calculates and returns the total time the projectile is in the air.
+- `calcVelocity()`: Calculates and returns the velocity of the projectile.
+- `calcPosition()`: Calculates and returns the position of the projectile.
+- `calcMaxHeight()`: Calculates and returns the maximum height reached by the projectile.
 
 ## Main Function
-In the '**main**' function, user input is gathered for starting height and starting angle. An instance of '**HowitzerSimulator**' is created with these inputs, and calculations are performed for position, air time, and maximum height. The results are then printed to the console.
+In the `main` function, user input is gathered for starting height and starting angle. An instance of `HowitzerSimulator` is created with these inputs, and calculations are performed for position, air time, and maximum height. The results are then printed to the console.
 
 ## Testing Methods
-Our group chose **Data Flow Testing** to ensure the quality and correctness of the software. We have unit tests for each method within the HowitzerSimulator class, as well as tests to check if the methods are responsive to changes in angle and height, which are the primary user inputs.
+Our group chose `Data Flow Testing` to ensure the quality and correctness of the software. We have unit tests for each method within the HowitzerSimulator class, as well as tests to check if the methods are responsive to changes in angle and height, which are the primary user inputs.
 
 ### Data Flow Testing
-
-```
+For instance,
+```java
 @Test
     public void testAngleDataFlow() {
         howitzerSimulator.setAngle(60); // changing the angle

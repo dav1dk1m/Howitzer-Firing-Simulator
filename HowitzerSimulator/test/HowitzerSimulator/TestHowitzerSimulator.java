@@ -4,6 +4,8 @@ import org.junit.*;
 
 import static org.junit.Assert.*;
 
+// Decision Table Testing
+
 public class TestHowitzerSimulator {
 
     @Test

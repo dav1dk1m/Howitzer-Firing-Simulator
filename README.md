@@ -14,7 +14,7 @@ Several public methods are defined to perform various calculations:
 ## Main Function
 In the `main` function, user input is gathered for starting height and starting angle. An instance of `HowitzerSimulator` is created with these inputs, and calculations are performed for position, air time, and maximum height. The results are then printed to the console.
 
-## Testing Methods
+# Testing Methods
 Our group chose `Data Flow Testing` to ensure the quality and correctness of the software. We have unit tests for each method within the HowitzerSimulator class, as well as tests to check if the methods are responsive to changes in angle and height, which are the primary user inputs.
 
 ### Data Flow Testing

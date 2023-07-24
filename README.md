@@ -14,14 +14,14 @@ Several public methods are defined to perform various calculations:
 ## Main Function
 In the `main` function, user input is gathered for starting height and starting angle. An instance of `HowitzerSimulator` is created with these inputs, and calculations are performed for position, air time, and maximum height. The results are then printed to the console.
 
-## Testing Methods
-Our group chose `Data Flow Testing` to ensure the quality and correctness of the software. We have unit tests for each method within the HowitzerSimulator class, as well as tests to check if the methods are responsive to changes in angle and height, which are the primary user inputs.
+# Testing Methods
+Our group chose `Black Box Testing` to ensure the quality and correctness of the software. We have unit tests for each method within the HowitzerSimulator class, as well as tests to check if the methods are responsive to changes in angle and height, which are the primary user inputs.
 
-### Data Flow Testing
+### Black Box Testing
 For instance,
 ```java
 @Test
-    public void testAngleDataFlow() {
+    public void testAngleBlackBox() {
         howitzerSimulator.setAngle(60); // changing the angle
 
         double expectedTime = 2.5635032317345625;
@@ -39,7 +39,7 @@ For instance,
 
 ```
 
-In the `testAngleDataFlow` method, three methods from the `HowitzerSimulator` class are being tested. Each of these methods should respond to changes in the `angle` attribute of a `HowitzerSimulator` instance.
+In the `testAngleBlackBox` method, three methods from the `HowitzerSimulator` class are being tested. Each of these methods should respond to changes in the `angle` attribute of a `HowitzerSimulator` instance.
 
 Here's what each method does:
 
@@ -82,7 +82,4 @@ assertEquals(expectedTime, actualTime, "The calculated landing time does not mat
 assertEquals(expectedPosition, actualPosition, "The calculated position does not match the expected result");
 assertEquals(expectedMaxHeight, actualMaxHeight, "The calculated max height does not match the expected result");
 ```
-
-
-
 

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * DATA FLOW TESTING : This class contains unit tests for the HowitzerSimulator class.
+ * BLACK BOX TESTING : This class contains unit tests for the HowitzerSimulator class.
  */
 class TestHowitzerSimulator {
 
@@ -70,7 +70,7 @@ class TestHowitzerSimulator {
      * This test checks if the methods of the HowitzerSimulator respond correctly to changes in angle.
      */
     @Test
-    public void testAngleDataFlow() {
+    public void testAngleBlackBox() {
         howitzerSimulator.setAngle(60); // changing the angle
 
         double expectedTime = 2.5635032317345625;
@@ -90,7 +90,7 @@ class TestHowitzerSimulator {
      * This test checks if the methods of the HowitzerSimulator respond correctly to changes in height.
      */
     @Test
-    public void testHeightDataFlow() {
+    public void testHeightBlackBox() {
         howitzerSimulator.setHeight(20); // changing the height
 
         double expectedTime = 2.866822842193277;

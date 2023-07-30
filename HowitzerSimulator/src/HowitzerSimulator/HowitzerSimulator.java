@@ -35,15 +35,19 @@ public class HowitzerSimulator {
 
 	public double calcHorizontalAcceleration(double t) {
 		// this is only for horizontal acceleration
+		if(t >= 0)
 		return (dragForce.calculateDragForce(t) * Math.cos(Math.toRadians(verticalAngle))
 				+ externalForce.getExternalForce(t) * Math.cos(Math.toRadians(verticalAngle)))/ mass;
+		return 0;
 	}
 
 	public double calcVerticalAcceleration(double t) {
 		// this is only for vertical acceleration
+		if(t >= 0)
 		return ((dragForce.calculateDragForce(t) * Math.sin(Math.toRadians(verticalAngle)))
 				+ externalForce.getExternalForce(t) * Math.sin(Math.toRadians(verticalAngle)) - gravForce.calculate())
 				/ mass;
+		return 0;
 	}
 
 	/**
@@ -52,9 +56,12 @@ public class HowitzerSimulator {
 	 * @return double in m/s
 	 */
 	public double calcHorizontalVelocity(double t) {
+		if(t >= 0) {
 		double Vx = velocity * Math.cos(Math.toRadians(verticalAngle));
 		// only the horizontal velocity matter for this at the moment
 		return Vx + (calcHorizontalAcceleration(t) * t);
+		}
+		return 0;
 	}
 
 	/**
@@ -63,9 +70,12 @@ public class HowitzerSimulator {
 	 * @return double in m/s
 	 */
 	public double calcVerticalVelocity(double t) {
+		if(t >= 0) {
 		double Vy = velocity * Math.sin(Math.toRadians(verticalAngle));
 		// only the horizontal velocity matter for this at the moment
 		return Vy + (calcVerticalAcceleration(t) * t);
+		}
+		return 0;
 	}
 
 	/**
@@ -74,25 +84,32 @@ public class HowitzerSimulator {
 	 * @return double in m
 	 */
 	public double calcRange(double time) {
+		if(time >= 0) {
 		double velocity = calcHorizontalVelocity(time);
 		return velocity * time;
+		}
+		return 0;
 
 	}
 
 	public double[] calcPosition(double time) {
+		
 		double positionArray[] = new double[3];
-		double range = calcRange(time);
+		if(time >= 0) {
+			double range = calcRange(time);
 
 		positionArray[2] = 0; // Assuming landing height as 0
 
 		if (rotationAngle == 0) {
-			positionArray[0] = range;
+			positionArray[0] = round(range);
 			positionArray[1] = 0;
 			return positionArray;
 		}
 		positionArray[0] = round(range * Math.cos(Math.toRadians(rotationAngle)));
 		positionArray[1] = round(range * Math.sin(Math.toRadians(rotationAngle)));
+		}
 		return positionArray;
+		
 
 	}
 

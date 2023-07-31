@@ -70,7 +70,7 @@ class TestHowitzerSimulator {
      * This test checks if the methods of the HowitzerSimulator respond correctly to changes in angle.
      */
     @Test
-    public void testAngleBlackBox() {
+    public void testAngleWhiteBox() {
         howitzerSimulator.setAngle(60); // changing the angle
 
         double expectedTime = 2.5635032317345625;
@@ -90,7 +90,7 @@ class TestHowitzerSimulator {
      * This test checks if the methods of the HowitzerSimulator respond correctly to changes in height.
      */
     @Test
-    public void testHeightBlackBox() {
+    public void testHeightWhiteBox() {
         howitzerSimulator.setHeight(20); // changing the height
 
         double expectedTime = 2.866822842193277;

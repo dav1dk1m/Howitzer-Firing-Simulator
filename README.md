@@ -14,18 +14,26 @@
 ## Project Design 
 - [UML Diagram](https://gitlab.com/sseboys/ense375-project/-/blob/main/ENSE_375_UML_Diagram.png)
 
+## Eclipse IDE Instructions
+- [Instructions](https://gitlab.com/sseboys/ense375-project/-/blob/main/RunningCodeAndTests.md)
+
 ## MVP (Minimum Viable Product)
-Our software project's development will be divided into three Minimum Viable Product (MVP) stages. Each stage represents an increased level of functionality and user interaction.
+The evolution of our software project unfolds across three stages, each represented by a distinct Minimum Viable Product (MVP). Every MVP marks an enhancement in software functionality and user interaction, progressively broadening the scope and detail of the application. For an in-depth view of the features and associated tests in each stage, feel free to explore the corresponding branches:
 
 ### [MVP 1](https://gitlab.com/sseboys/ense375-project/-/tree/mvpOne)
 ---
-The first stage will take user inputs for height and angle and produce outputs depicting the position in a 2D plane, air time, and maximum height. This provides the user with a basic understanding of how these variables influence the outcome.
+This initial stage focuses on core mechanics. The software takes user inputs for height and angle, and outputs the projectile's position in a 2D plane, its air time, and maximum height. This provides users with fundamental insights into the interplay between input variables and basic projectile motion outcomes.
 
 ### [MVP 2](https://gitlab.com/sseboys/ense375-project/-/tree/mvpTwo)
 ---
- The second stage will expand on this, accepting user inputs for launch angle, rotation angle, height, mass, and velocity. The outputs will be more detailed, including the position in a 3D space, range, maximum height, air time, and trajectory. 
+Building upon the first MVP, the second stage expands input parameters to include launch angle, rotation angle, mass, and velocity. As a result, the outputs become more nuanced, now depicting the projectile's position in a 3D space, range, maximum height, air time, and trajectory. This offers a more comprehensive and detailed simulation of projectile motion.
 
 ### [MVP 3](https://gitlab.com/sseboys/ense375-project/-/tree/mvpThree)
 ___
- The final stage of development will build on MVP 2 by incorporating the effects of external forces. This creates the final product, where outputs are influenced by both user inputs and external environmental factors, providing the most detailed and accurate predictions.
+In the final stage, MVP 3 extends the capabilities of MVP 2 by accounting for the effects of external forces. The simulation becomes truly multifaceted as outcomes are shaped by both user-defined inputs and external environmental factors. This fully-fledged product provides the most detailed and accurate trajectory predictions, accommodating real-world complexity within the simulation.
+
+
+
+
+
 

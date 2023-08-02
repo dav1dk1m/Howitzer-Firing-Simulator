@@ -21,14 +21,8 @@ assert(howSim.calcHorizontalAcceleration(howSim.airTime) == 0.1220799060460304);
 
 These boundary tests ensure that the `calcHorizontalAcceleration` method behaves as expected not only within the normal flight time range, but also at the edge cases. It provides a robust evaluation of the `HowitzerSimulator` and its capacity to correctly simulate the horizontal acceleration of the projectile under all expected conditions.
 
-
-
-
-
-
-
-
-
-
+## Testing Graph and Diagram
+Please explore the following links to view the testing graph and diagram:
+[Graphs/Diagrams Folder](https://gitlab.com/sseboys/ense375-project/-/tree/mvpThree/GraphDiagram)
 
 

@@ -172,7 +172,7 @@ public class HowitzerSimulator {
 	}
 
 	/**
-	 * rounds values to 2 devimal places
+	 * rounds values to 2 decimal places
 	 * 
 	 * @return double 
 	 * 
@@ -181,59 +181,6 @@ public class HowitzerSimulator {
 		return Math.round(x * 100.00) / 100.00;
 	}
 
-	/**
-	 * Gets the drag force on the projectile
-	 * 
-	 * @return DragForce in N
-	 */
-	public DragForce getDragForce() {
-		return dragForce;
-	}
-
-	/**
-	 * Sets the drag force on the projectile
-	 * 
-	 * @param DragForce in N
-	 */
-	public void setDragForce(DragForce dragForce) {
-		this.dragForce = dragForce;
-	}
-
-	/**
-	 * Gets the angle of the projectile
-	 * 
-	 * @return angle in degrees
-	 */
-	public double getAngle() {
-		return verticalAngle;
-	}
-
-	/**
-	 * Sets the angle of the projectile
-	 * 
-	 * @param angle in degrees
-	 */
-	public void setAngle(double angle) {
-		this.verticalAngle = angle;
-	}
-
-	/**
-	 * Gets the starting height of the projectile
-	 * 
-	 * @return height in m
-	 */
-	public double getHeight() {
-		return height;
-	}
-
-	/**
-	 * Sets the starting height of the projectile
-	 * 
-	 * @param height in m
-	 */
-	public void setHeight(int height) {
-		this.height = height;
-	}
 
 	public static void main(String[] args) {
 		double launchAngle;

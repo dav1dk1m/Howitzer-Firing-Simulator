@@ -39,68 +39,6 @@ public class DragForce {
 	    	return dragCoefficient * fluidDensity * area;
 	    }
 	    
-	    /**
-	     * Gets the drag coefficient
-	     * @return double dragCoefficient
-	     */
-	    public double getDragCoefficient() {
-	        return dragCoefficient;
-	    }
-	    
-	    /**
-	     * Sets the drag coefficient	
-	     * @param double dragCoefficient
-	     */
-	    public void setDragCoefficient(double dragCoefficient) {
-	        this.dragCoefficient = dragCoefficient;
-	    }
-	    
-	    /**
-	     * Gets the fluid Density
-	     * @return double fluidDensity
-	     */
-	    public double getFluidDensity() {
-	        return fluidDensity;
-	    }
-	    
-	    /**
-	     * Sets the fluid Density
-	     * @param double fluidDensity
-	     */
-	    public void setFluidDensity(int fluidDensity) {
-	        this.fluidDensity = fluidDensity;
-	    }
-	    
-	    /**
-	     * Gets the area of the projectile
-	     * @return double area
-	     */
-	    public int getArea() {
-	        return area;
-	    }
-	    /**
-	     * Sets the area of the projectile
-	     * @param double area
-	     */
-	    public void setArea(int area) {
-	        this.area = area;
-	    }
-	    
-	    /**
-	     * Gets the flow Velocity
-	     * @return double flowVelocity
-	     */
-	    public double getFlowVelocity() {
-	        return flowVelocity;
-	    }
-	    
-	    /**
-	     * Sets the flow Velocity
-	     * @param double flowVelocity
-	     */
-	    public void setFlowVelocity(double flowVelocity) {
-	        this.flowVelocity = flowVelocity;
-	    }
 
 }
 

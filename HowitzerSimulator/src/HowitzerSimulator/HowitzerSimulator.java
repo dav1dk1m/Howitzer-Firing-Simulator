@@ -32,7 +32,13 @@ public class HowitzerSimulator {
 		this.gravForce = new GravitionalForce(mass);
 		this.externalForce = new ExternalForce(1, rocketForce);
 	}
-
+	
+	
+	/**
+	 * calculates the Acceleration of the projectile
+	 * 
+	 * @return double in m/s^2
+	 */
 	public double calcHorizontalAcceleration(double t) {
 		// this is only for horizontal acceleration
 		if(t >= 0)
@@ -41,6 +47,11 @@ public class HowitzerSimulator {
 		return 0;
 	}
 
+	/**
+	 * calculates the Acceleration of the projectile
+	 * 
+	 * @return double in m/s^2
+	 */
 	public double calcVerticalAcceleration(double t) {
 		// this is only for vertical acceleration
 		if(t >= 0)
@@ -91,7 +102,12 @@ public class HowitzerSimulator {
 		return 0;
 
 	}
-
+	
+	/**
+	 * calculates the 3D position of the projectile
+	 * 
+	 * @return double in [x,y,z]m
+	 */
 	public double[] calcPosition(double time) {
 		
 		double positionArray[] = new double[3];
@@ -112,7 +128,12 @@ public class HowitzerSimulator {
 		
 
 	}
-
+	
+	/**
+	 * calculates the height of the projectile at a given time
+	 * 
+	 * @return double in height m
+	 */
 	public void calcTrajectory() {
 		double position = height;
 		double time = 0.0;
@@ -150,6 +171,12 @@ public class HowitzerSimulator {
 				+ round(positionArr[2]) + "]m");
 	}
 
+	/**
+	 * rounds values to 2 devimal places
+	 * 
+	 * @return double 
+	 * 
+	 */
 	public double round(double x) {
 		return Math.round(x * 100.00) / 100.00;
 	}

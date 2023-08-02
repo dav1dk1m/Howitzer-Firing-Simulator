@@ -9,6 +9,11 @@ public class ExternalForce {
 		this.rocketForce = rocketForce;
 	}
 	
+	/**
+	 * adds the booster force while time > 0
+	 * 
+	 * @return double in [x,y,z]m
+	 */
 	public double getExternalForce(double t) {
 		if(t == boosterTime)
 			return 0;

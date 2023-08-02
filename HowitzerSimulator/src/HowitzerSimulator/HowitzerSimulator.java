@@ -10,17 +10,16 @@ public class HowitzerSimulator {
 	private int height;
 	private static int MASS = 5;
 	private static int UNIVERSAL_CONSTANT = 1;
-	private DragForce dragForce;
 	private GravitionalForce gravForce;
 	public static int INITIAL_VELOCITY = 10;
 
+	/**	
+	* Constructor for HowitzerSimulator 
+	*/
 	public HowitzerSimulator(double angle, int height) {
 		this.angle = angle;
 		this.height = height;
-		this.dragForce = new DragForce((double) UNIVERSAL_CONSTANT, UNIVERSAL_CONSTANT, UNIVERSAL_CONSTANT,
-				UNIVERSAL_CONSTANT);
 		this.gravForce = new GravitionalForce(MASS);
-//		this.externalForce = new ExternalForce()
 	}
 	
 	/**	
@@ -63,22 +62,7 @@ public class HowitzerSimulator {
 		
 		return height + ((Math.pow(INITIAL_VELOCITY, 2) * Math.pow( Math.sin(Math.toRadians(angle)), 2))/(2 * GravitionalForce.GRAVITY));
 	}
-
-	/**	
-	* Gets the drag force on the projectile 
-	* @return DragForce in N
-	*/
-	public DragForce getDragForce() {
-		return dragForce;
-	}
-	/**	
-	* Sets the drag force on the projectile 
-	* @param DragForce in N
-	*/
-	public void setDragForce(DragForce dragForce) {
-		this.dragForce = dragForce;
-	}
-
+	
 	/**	
 	* Gets the angle of the projectile 
 	* @return angle in degrees

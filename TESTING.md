@@ -1,4 +1,4 @@
-# MVP 3
+# MVP 3 TESTING
 In this stage of the project, further testing is performed on the `HowitzerSimulator` class, with a focus on the `calcHorizontalAcceleration` method. Ensuring the accuracy and consistency of this method is crucial, as it calculates the horizontal acceleration of the simulated projectile at any given time during its trajectory, which in turn, affects many other aspects of the simulation.
 
 ## Unit Testing: Boundary Value Testing

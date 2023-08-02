@@ -1,4 +1,4 @@
-# MVP 1
+# MVP 1 TESTING
 
 ## Description
 MVP 1 focuses on taking user inputs for height and angle and generates outputs of position in a 2D plane, air time, and maximum height.

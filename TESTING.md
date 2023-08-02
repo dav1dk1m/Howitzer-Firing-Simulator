@@ -1,8 +1,5 @@
+# MVP 2 TESTING
 
-# MVP 2 
-
-## Description
-MVP 2 focuses on  taking user inputs for height and angle and produce outputs depicting the position in a 2D plane, air time, and maximum height. 
 
 ## Code Under Test
 

@@ -24,54 +24,54 @@ These boundary tests ensure that the `calcHorizontalAcceleration` method behaves
 ## Equivalence Class Testing
 For Equivalence Class Testing we looked at the horizontal acceleration and made sure that we added a precondition on the time to ensure time could never be negative. We tested a few negative values, zero and positive values. 
 
-**large negative value**
-```
+**Large negative Value**
+```java
 assert(howSim.calcHorizontalAcceleration(-1) == 0);
 ```
 
-**large negative value**
-```
+**Large negative Value**
+```java
 assert(howSim.calcHorizontalAcceleration(-0.01) == 0);
 ```
 
-** Zero**
-```
+**Zero**
+```java
 assert(howSim.calcHorizontalAcceleration(0) == 0.1220799060460304);
 ```
 
-** Positive value**
-```
+**Positive Value**
+```java
 assert(howSim.calcHorizontalAcceleration(.6) == 0.12268984803657863);
 ```
 
-##Decision Table Testing 
+## Decision Table Testing 
 For this we tested calcPosition as it has values that can change a lot compared to the horizontal acceleration function. 
 the table can be found in our graphs folder. 
 
-##Path testing 
+## Path testing 
 We used the horizontal acceleration function and tested all paths depicted in the graph.
 
-```
+```java
 assert(howSim.calcHorizontalAcceleration(-0.01) == 0);
 ```
 
-```
+```java
 assert(howSim.calcHorizontalAcceleration(0) == 1.0376792013912586);
 ```
 
-```
+```java
 assert(howSim.calcHorizontalAcceleration(.6) == 1.0428637083109185);
 ```
 
-##Integration Testing
+## Integration Testing
 Integration we looked at all the functions by using the range and position functions as they call all the supporting functions for calculating and displaying the results. 
 
-The graph can be found in the graph folder.
+The graph can be found in the [graph folder](https://gitlab.com/sseboys/ense375-project/-/tree/mvpThree/GraphDiagram).
 
-##System Testing
+## System Testing
 System testing we used an FSM diagram and then visually looked for specific console outputs to ensure the proper order was being followed. 
 
-the graph can be found in the graphs folder.
+The graph can be found in the [graph folder](https://gitlab.com/sseboys/ense375-project/-/tree/mvpThree/GraphDiagram).
 
 
 ## Testing Graph and Diagram

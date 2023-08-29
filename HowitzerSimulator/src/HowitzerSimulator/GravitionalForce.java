@@ -18,3 +18,4 @@ public class GravitionalForce {
 		return mass * GRAVITY;
 	}
 }
+;

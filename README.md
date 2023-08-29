@@ -34,7 +34,7 @@ Building upon the first MVP, the second stage expands input parameters to includ
 
 ### [MVP 3](https://gitlab.com/sseboys/ense375-project/-/tree/mvpThree)
 ___
-In the final stage, MVP 3 extends the capabilities of MVP 2 by accounting for the effects of external forces. The simulation becomes truly multifaceted as outcomes are shaped by both user-defined inputs and external environmental factors. This fully-fledged product provides the most detailed and accurate trajectory predictions, accommodating real-world complexity within the simulation.
+In the final stage, MVP 3 extends the capabilities of MVP 2 by accounting for the effects of external forces. The simulation becomes truly multifaceted as outcomes are shaped by both user-defined inputs and external environmental factors. This fully-fledged product provides the most detailed and accurate trajectory predictions, accommodating real-world complexity within the simulation..
 
 
 

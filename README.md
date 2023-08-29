@@ -20,4 +20,4 @@ This MVP aims to provide users with fundamental insights into the relationship b
 2. Once these inputs are provided, the application will calculate and display the object's position in a 2D plane, the total air time, and the maximum height achieved.
 
 ## Testing
-We've conducted rigorous testing to ensure that MVP 1 operates as expected. You can review the details of these tests and their results in the [MVP 1 Testing Document](https://gitlab.com/sseboys/ense375-project/-/blob/mvpOne/TESTING.md)..
+We've conducted rigorous testing to ensure that MVP 1 operates as expected. You can review the details of these tests and their results in the [MVP 1 Testing Document](https://gitlab.com/sseboys/ense375-project/-/blob/mvpOne/TESTING.md).

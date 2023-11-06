@@ -1,8 +1,8 @@
 # Howitzer Firing Simulator
 
-## Project Presentation 
+## [Project Presentation](https://docs.google.com/presentation/d/1DBgWE8TJZASW9LF38eZuiqkOI68La9Bw9HKmF9VmBNc/edit?usp=sharing)
 
-[![Project Slides](https://github.com/dav1dk1m/profile/assets/36246244/67c6fbcd-8f00-49b9-a75c-574a9de02799)](https://docs.google.com/presentation/d/1DBgWE8TJZASW9LF38eZuiqkOI68La9Bw9HKmF9VmBNc/edit#slide=id.p)
+[![Project Slides](https://github.com/dav1dk1m/profile/assets/36246244/67c6fbcd-8f00-49b9-a75c-574a9de02799)](https://docs.google.com/presentation/d/1DBgWE8TJZASW9LF38eZuiqkOI68La9Bw9HKmF9VmBNc/edit?usp=sharing)
 
 
 ## Team Members
